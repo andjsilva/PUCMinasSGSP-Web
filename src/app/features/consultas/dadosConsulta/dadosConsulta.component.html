@@ -1,0 +1,215 @@
+<po-container p-no-border="true" p-no-shadow="true">
+  <form [formGroup]="formAgendarConsulta">
+    <div>
+      <po-loading-overlay [hidden]="carregando" p-text="Carregando Pacientes">
+      </po-loading-overlay>
+    </div>
+    <div>
+      <po-divider p-label="Dados do Paciente"></po-divider>
+      <div class="po-md-12">
+        <div *ngIf="tipoOperacao !== 1">
+          <po-combo
+            class="po-md-6"
+            p-placeholder="Informe o nome, documento ou código do paciente"
+            formControlName="idPaciente"
+            name="idPaciente"
+            p-label="Paciente"
+            (p-change)="selecionaPaciente($event)"
+            p-filter-mode="contains"
+            [p-options]="pacientes"
+          >
+          </po-combo>
+        </div>
+        <div *ngIf="tipoOperacao === 1">
+          <po-input
+            class="po-md-6"
+            p-placeholder="Informe o nome, documento ou código do paciente"
+            formControlName="idPaciente"
+            p-readonly="true"
+            name="idPaciente"
+            p-label="Paciente"
+            p-filter-mode="contains"
+          >
+          </po-input>
+        </div>
+        <po-input
+          class="po-md-6"
+          formControlName="nomePaciente"
+          p-readonly="true"
+          name="nomePaciente"
+          p-label="Nome"
+        >
+        </po-input>
+      </div>
+      <div class="po-md-12">
+        <po-input
+          class="po-md-6"
+          formControlName="dataNascimentoPaciente"
+          p-readonly="true"
+          name="dataNascimentoPaciente"
+          p-label="Nascimento"
+        >
+        </po-input>
+
+        <po-input
+          class="po-md-6"
+          formControlName="documentoPaciente"
+          p-readonly="true"
+          name="documentoPaciente"
+          p-label="Documento"
+        >
+        </po-input>
+      </div>
+      <div class="po-md-12">
+        <po-input
+          class="po-md-12"
+          formControlName="emailPaciente"
+          p-readonly="true"
+          name="emailPaciente"
+          p-label="E-mail"
+        >
+        </po-input>
+      </div>
+      <po-divider p-label="Dados do Atendimento"></po-divider>
+
+      <div class="po-md-12">
+        <div *ngIf="tipoOperacao !== 1">
+          <po-combo
+            class="po-md-6"
+            p-placeholder="Informe o procedimento desejado"
+            formControlName="procedimento"
+            name="procedimento"
+            p-label="Procedimento"
+            (p-change)="selecionaProcedimento($event)"
+            [p-options]="procedimentos"
+          >
+          </po-combo>
+
+          <po-combo
+            class="po-md-6"
+            p-placeholder="Informe o nome, documento ou código do Médico"
+            formControlName="idFuncionario"
+            name="idFuncionario"
+            p-label="Médico"
+            (p-change)="selecionaFuncionario($event)"
+            [p-disabled]="habilitaMedico"
+            [p-options]="medicosCombo"
+          >
+          </po-combo>
+        </div>
+        <div *ngIf="tipoOperacao === 1">
+          <po-input
+            class="po-md-6"
+            p-placeholder="Informe o procedimento desejado"
+            formControlName="procedimento"
+            name="procedimento"
+            p-label="Procedimento"
+          >
+          </po-input>
+
+          <po-input
+            class="po-md-6"
+            p-placeholder="Informe o nome, documento ou código do Médico"
+            formControlName="idFuncionario"
+            name="idFuncionario"
+            p-label="Médico"
+          >
+          </po-input>
+        </div>
+      </div>
+      <div class="po-md-12">
+        <po-input
+          class="po-md-6"
+          formControlName="nomeFuncionario"
+          p-readonly="true"
+          name="nomeFuncionario"
+          p-label="Nome"
+        >
+        </po-input>
+
+        <po-input
+          class="po-md-6"
+          formControlName="dataNascimentoFuncionario"
+          p-readonly="true"
+          name="dataNascimentoFuncionario"
+          p-label="Nascimento"
+        >
+        </po-input>
+      </div>
+      <div class="po-md-12">
+        <po-input
+          class="po-md-6"
+          formControlName="documentoFuncionario"
+          p-readonly="true"
+          name="documentoFuncionario"
+          p-label="Documento"
+        >
+        </po-input>
+
+        <po-input
+          class="po-md-6"
+          formControlName="emailFuncionario"
+          p-readonly="true"
+          name="emailFuncionario"
+          p-label="E-mail"
+        >
+        </po-input>
+      </div>
+      <div class="po-md-12">
+        <div *ngIf="tipoOperacao !== 1">
+          <po-combo
+            class="po-md-6"
+            p-placeholder="Selecione uma data disponível"
+            formControlName="dataAtendimento"
+            name="dataAtendimento"
+            p-label="Data Atendimento"
+            (p-change)="selecionaData($event)"
+            [p-options]="datasDisponiveisCombo"
+          >
+          </po-combo>
+
+          <po-combo
+            class="po-md-6"
+            p-placeholder="Selecione um horário disponível"
+            formControlName="horaAtendimento"
+            name="horaAtendimento"
+            p-label="Hora Atendimento"
+            [p-options]="horasDisponiveisCombo"
+          >
+          </po-combo>
+        </div>
+        <div *ngIf="tipoOperacao === 1">
+          <po-input
+            class="po-md-6"
+            p-placeholder="Selecione uma data disponível"
+            p-readonly="true"
+            formControlName="dataAtendimento"
+            name="dataAtendimento"
+            p-label="Data Atendimento"
+          >
+          </po-input>
+
+          <po-input
+            class="po-md-6"
+            p-placeholder="Selecione um horário disponível"
+            p-readonly="true"
+            formControlName="horaAtendimento"
+            name="horaAtendimento"
+            p-label="Hora Atendimento"
+          >
+          </po-input>
+        </div>
+        <po-input
+          class="po-md-12"
+          formControlName="descricaoAtendimento"
+          p-readonly="true"
+          name="descricaoAtendimento"
+          p-label="Descrição"
+        >
+        </po-input>
+      </div>
+    </div>
+  </form>
+</po-container>
+
+
