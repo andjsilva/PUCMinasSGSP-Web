@@ -32,6 +32,11 @@ export class MenuComponent implements OnInit {
             label: 'Produtos', action: () => {
               this.router.navigate(['produtos']);
             }, shortLabel: 'Produtos', icon: 'po-icon po-icon-plus'
+          },
+          {
+            label: 'Campanhas', action: () => {
+              this.router.navigate(['campanhas']);
+            }, shortLabel: 'Campanhas', icon: 'po-icon po-icon-plus'
           }
         ]
       },
@@ -40,26 +45,22 @@ export class MenuComponent implements OnInit {
         shortLabel: 'Consultas',
         subItems: [
           {
-            label: 'Agendar Consultas', action: () => {
-              this.router.navigate(['consultas']);
-            }, shortLabel: 'Agendar', icon: 'po-icon-clock'
+            label: 'Atendimentos', action: () => {
+              this.router.navigate(['atendimentos']);
+            }, shortLabel: 'Atendimentos', icon: 'po-icon-clock'
           },
           {
-            label: 'Minhar Consultas', action: () => {
-              this.router.navigate(['consultas']);
-            }, shortLabel: 'Agendar', icon: 'po-icon-clock'
+            label: 'Estoque de Medicamentos', action: () => {
+              this.router.navigate(['estoqueMedicamentos']);
+            }, shortLabel: 'Medicamentos', icon: 'po-icon-clock'
           },
           {
             label: 'Meus Atendimentos', action: () => {
-              this.router.navigate(['consultas']);
-            }, shortLabel: 'Agendar', icon: 'po-icon-clock'
+              this.router.navigate(['meusAtendimentos']);
+            }, shortLabel: 'Atendimentos', icon: 'po-icon-clock'
           }
         ]
-      },
-      {
-        label: 'Prontuários', link: 'customers', icon: 'po-icon-clipboard',
-        shortLabel: 'Prontuários',
-      },
+      }
     ];
   }
 

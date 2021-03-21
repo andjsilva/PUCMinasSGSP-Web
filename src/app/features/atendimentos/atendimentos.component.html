@@ -1,0 +1,18 @@
+<po-page-default p-title="Atendimentos" [p-actions] = 'actionsPage'>
+  <div  class='po-md-6'>
+    <po-input p-label='Pesquisar' p-placeholder='Pesquise por CPF'>
+    </po-input>
+  </div>
+  <div class='po-md-12'>
+    <po-table
+      p-sort="true"
+      [p-columns]="columns"
+      [p-items]="atendimentos"
+      [p-striped]="true"
+      [p-actions]="actionsTable">
+    </po-table>
+  </div>
+  <po-modal p-title="Atendimento - Confirmar" p-click-out="true" >
+    <app-formulario-atendimento></app-formulario-atendimento>
+  </po-modal>
+</po-page-default>

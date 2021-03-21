@@ -1,0 +1,92 @@
+<po-container p-no-border="true" p-no-shadow="true">
+  <form [formGroup]="formAgendarConsulta">
+    <div>
+      <po-divider p-label="Paciente"> </po-divider>
+      <po-input
+        class="po-md-6"
+        formControlName="codigoPaciente"
+        name="codigoPaciente"
+        p-label="Código"
+        p-readonly="true"
+      >
+      </po-input>
+
+      <po-input
+        class="po-md-6"
+        formControlName="nomePaciente"
+        name="NomePaciente"
+        p-label="Nome"
+        p-readonly="true"
+      >
+      </po-input>
+
+      <po-input
+        class="po-md-6"
+        formControlName="cpfPaciente"
+        name="cpfPaciente"
+        p-label="CPF"
+        p-readonly="true"
+      >
+      </po-input>
+
+      <po-input
+        class="po-md-6"
+        formControlName="telefonePaciente"
+        name="telefonePaciente"
+        p-label="Telefone"
+        p-readonly="true"
+      >
+      </po-input>
+
+      <po-divider p-label="Detelhes do Atendimento"> </po-divider>
+      <po-input
+        class="po-md-6"
+        formControlName="atendEntrada"
+        name="atendEntrada"
+        p-label="Entrada"
+        p-readonly="true"
+      >
+
+      </po-input>
+
+      <po-input
+        class="po-md-6"
+        formControlName="atendSaida"
+        name="atendSaida"
+        p-label="Saida"
+        p-readonly="true"
+      >
+      </po-input>
+
+      <po-input
+        class="po-md-6"
+        formControlName="unidAtendimento"
+        name="unidAtendimento"
+        p-label="Unidade de Atendimento"
+        p-readonly="true"
+      >
+      </po-input>
+
+      <po-radio-group
+        class="po-md-6"
+        formControlName="tipoAtendimento"
+        name="tipoAtendimento"
+        p-label="Tipo de Atendimento"
+        [p-options]="[
+          { label: 'Consulta', value: 1 },
+          { label: 'Exames', value: 2 },
+          { label: 'Internação', value: 3 }
+        ]"
+      >
+      </po-radio-group>
+
+      <po-input
+        class="po-md-12"
+        formControlName="observacao"
+        name="observacao"
+        p-label="Observação"
+      >
+      </po-input>
+    </div>
+  </form>
+</po-container>

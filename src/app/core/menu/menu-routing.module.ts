@@ -14,10 +14,10 @@ const routes: Routes = [
         component: HomeComponent,
       },
       {
-        path: 'consultas',
+        path: 'atendimentos',
         loadChildren: () =>
-          import('../../features/consultas/consultas.module').then(
-            (m) => m.ConsultasModule
+          import('../../features/atendimentos/atendimentos.module').then(
+            (m) => m.AtendimentosModule
           ),
       },
       {
