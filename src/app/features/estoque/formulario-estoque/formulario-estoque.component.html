@@ -1,0 +1,69 @@
+<po-container p-no-border="true" p-no-shadow="true">
+  <form [formGroup]="formEstoque">
+    <div>
+      <po-divider p-label="Informações do Estoque"> </po-divider>
+      <po-input
+        class="po-md-6"
+        formControlName="codigo"
+        name="codigo"
+        p-label="Código"
+        p-readonly="true"
+      >
+      </po-input>
+
+      <po-input
+        class="po-md-6"
+        formControlName="descricao"
+        name="descricao"
+        p-label="Descrição"
+        p-readonly="true"
+      >
+      </po-input>
+
+      <po-input
+        class="po-md-6"
+        formControlName="codFabr"
+        name="codFabr"
+        p-label="Código do Fabricante"
+        p-readonly="true"
+      >
+      </po-input>
+
+      <po-input
+        class="po-md-6"
+        formControlName="quantidade"
+        name="quantidade"
+        p-label="Quantidade"
+        p-readonly="true"
+      >
+      </po-input>
+
+      <po-input
+        class="po-md-6"
+        formControlName="unidade"
+        name="unidade"
+        p-label="Unidade"
+        p-readonly="true"
+      >
+      </po-input>
+
+
+      <po-radio-group
+        class="po-md-6"
+        formControlName="tipo"
+        name="tipo"
+        p-label="Tipo"
+        [p-options]="[
+          { label: 'Medicamento', value: 1 },
+          { label: 'Insumo', value: 2 },
+          { label: 'Limpeza', value: 3 },
+          { label: 'Material', value: 4 },
+          { label: 'Equipamento', value: 5 }
+        ]"
+      >
+      </po-radio-group>
+
+
+    </div>
+  </form>
+</po-container>

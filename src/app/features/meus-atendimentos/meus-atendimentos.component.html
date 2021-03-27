@@ -1,0 +1,18 @@
+<po-page-default p-title="Meus Atendimentos">
+  <div  class='po-md-6'>
+    <po-input p-label='Pesquisar' p-placeholder='Pesquise por CPF'>
+    </po-input>
+  </div>
+  <div class='po-md-12'>
+    <po-table
+      p-sort="true"
+      [p-columns]="columns"
+      [p-items]="atendimentos"
+      [p-striped]="true"
+      [p-actions]="actionsTable">
+    </po-table>
+  </div>
+  <po-modal p-title="Atendimento - Visualizar" p-click-out="true" >
+    <app-formulario-meus-atendimento></app-formulario-meus-atendimento>
+  </po-modal>
+</po-page-default>

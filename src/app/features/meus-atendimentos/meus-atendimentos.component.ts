@@ -3,14 +3,13 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-atendimentos',
-  templateUrl: './atendimentos.component.html',
-  styleUrls: ['./atendimentos.component.css'],
+  templateUrl: './meus-atendimentos.component.html',
+  styleUrls: ['./meus-atendimentos.component.css'],
 })
-export class AtendimentosComponent implements OnInit {
+export class MeusAtendimentosComponent implements OnInit {
   public columns: Array<PoTableColumn>;
   public atendimentos: Array<any>;
   public actionsTable: Array<PoTableAction>;
-  public actionsPage:Array<PoPageAction> = [{label:'Incluir',icon:'po-icon-plus-circle',action:()=>alert('Incluir')}]
 
   @ViewChild(PoModalComponent, { static: true }) poModal: PoModalComponent;
 
@@ -40,61 +39,48 @@ export class AtendimentosComponent implements OnInit {
 
     this.atendimentos = [
       {
+        codigo: '000200',
+        nome: 'João da Silva',
+        cpf: '315.562.456-08',
+        tel: '(11) 99252-3178',
+        entrada:'23/10/2020 08:30',
+        saida:'30/10/2020 15:00',
+        unidade:'Dante Pazzanese de Cardiologia',
+        tipo:3,
+        obs:'Cirurgia do coração'
+      },
+      {
         codigo: '001000',
         nome: 'João da Silva',
         cpf: '315.562.456-08',
         tel: '(11) 99252-3178',
-        entrada:'23/02/2020 10:40:00',
-        saida:'23/02/2020 11:20:00',
+        entrada:'23/02/2020 10:40',
+        saida:'23/02/2020 11:20',
         unidade:'UBS Santana - Zona Norte',
         tipo:1,
         obs:'Neurologista - Dr. Raul'
       },
       {
-        codigo: '010019',
-        nome: 'Maria Eduarda Botelho',
-        cpf: '767.512.256-07',
-        tel: '(11) 98928-3190',
-        entrada:'23/03/2020 10:40:00',
-        saida:'23/03/2020 11:20:00',
+        codigo: '001039',
+        nome: 'João da Silva',
+        cpf: '315.562.456-08',
+        tel: '(11) 99252-3178',
+        entrada:'10/03/2021 10:40',
+        saida:'10/03/2021 11:20s',
         unidade:'UBS Santana - Zona Norte',
         tipo:2,
-        obs:'Papanicolau / Mamografia'
-      }
-      ,
-      {
-        codigo: '020019',
-        nome: 'James José da Silva',
-        cpf: '576.346.765-08',
-        tel: '(11) 78409-2090',
-        entrada:'26/03/2020 10:40:00',
-        saida:' ',
-        unidade:'Hospital Santana - Zona Norte',
-        tipo:3,
-        obs:'COVID-19 - UTI'
+        obs:'Covid-19 anti-corpos'
       },
     ];
 
     this.actionsTable = [
       {
-        action: ()=>alert('texto'),
+        action: ()=>this.poModal.open(),
         label: 'Visualizar'
       },
       {
         action: ()=>this.poModal.open(),
-        label: 'Confirmar'
-      },
-      {
-        action: ()=>alert('texto'),
-        label: 'Finalizar'
-      },
-      {
-        action: ()=>alert('texto'),
-        label: 'Cancelar'
-      },
-      {
-        action: ()=>alert('texto'),
-        label: 'Medicamentos'
+        label: 'Imprimir'
       }
 
     ];

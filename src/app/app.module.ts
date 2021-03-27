@@ -1,3 +1,5 @@
+import { MeusAtendimentosModule } from './features/meus-atendimentos/meus-atendimentos.module';
+import { EstoqueModule } from './features/estoque/estoque.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -18,6 +20,8 @@ import { PoModule } from '@po-ui/ng-components';
     RouterModule.forRoot([]),
     CoreModule,
     AtendimentosModule,
+    EstoqueModule,
+    MeusAtendimentosModule,
     PoModule
   ],
   providers: [],

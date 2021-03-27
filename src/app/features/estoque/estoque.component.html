@@ -1,0 +1,18 @@
+<po-page-default p-title="Estoque">
+  <div  class='po-md-6'>
+    <po-input p-label='Pesquisar' p-placeholder='Pesquise por descrição'>
+    </po-input>
+  </div>
+  <div class='po-md-12'>
+    <po-table
+      p-sort="true"
+      [p-columns]="columns"
+      [p-items]="estoque"
+      [p-striped]="true"
+      [p-actions]="actionsTable">
+    </po-table>
+  </div>
+  <po-modal p-title="Estoque" p-click-out="true" >
+    <app-formulario-estoque></app-formulario-estoque>
+  </po-modal>
+</po-page-default>

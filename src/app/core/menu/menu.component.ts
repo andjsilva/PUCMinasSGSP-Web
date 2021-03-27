@@ -50,9 +50,9 @@ export class MenuComponent implements OnInit {
             }, shortLabel: 'Atendimentos', icon: 'po-icon-clock'
           },
           {
-            label: 'Estoque de Medicamentos', action: () => {
-              this.router.navigate(['estoqueMedicamentos']);
-            }, shortLabel: 'Medicamentos', icon: 'po-icon-clock'
+            label: 'Estoque', action: () => {
+              this.router.navigate(['estoque']);
+            }, shortLabel: 'Estoque', icon: 'po-icon-clock'
           },
           {
             label: 'Meus Atendimentos', action: () => {

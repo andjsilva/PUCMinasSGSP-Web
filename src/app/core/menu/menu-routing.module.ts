@@ -27,6 +27,30 @@ const routes: Routes = [
             (m) => m.ProdutosModule
           ),
       },
+      {
+        path: 'campanhas',
+        loadChildren: () =>
+          import('../../features/campanhas/campanhas.module').then(
+            (m) => m.CampanhasModule
+          ),
+      },
+
+
+      {
+        path: 'estoque',
+        loadChildren: () =>
+          import('../../features/estoque/estoque.module').then(
+            (m) => m.EstoqueModule
+          ),
+      },
+      {
+        path: 'meusAtendimentos',
+        loadChildren: () =>
+          import('../../features/meus-atendimentos/meus-atendimentos.module').then(
+            (m) => m.MeusAtendimentosModule
+          ),
+      }
+
     ],
   },
 ];
